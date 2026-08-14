@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://duqdkvotgtqs2"]
+
+[ext_resource type="Script" uid="uid://cbtac43cnsd8a" path="res://gd/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://cah1xnbetumhv" path="res://icon.svg" id="2_g2els"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f12s3"]
+bounce = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f12s3"]
+transparency = 1
+albedo_color = Color(1, 0, 1, 0.49019608)
+albedo_texture = ExtResource("2_g2els")
+
+[sub_resource type="SphereMesh" id="SphereMesh_f12s3"]
+material = SubResource("StandardMaterial3D_f12s3")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f12s3"]
+
+[node name="body" type="RigidBody3D" unique_id=2125592273]
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_f12s3")
+script = ExtResource("1_3vyb7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1899067314]
+mesh = SubResource("SphereMesh_f12s3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=777682827]
+shape = SubResource("SphereShape3D_f12s3")

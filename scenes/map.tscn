@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://doq2niydufqtj"]
+
+[ext_resource type="Shader" uid="uid://2tle2lrdsayi" path="res://shaders/map.tres" id="1_4xfga"]
+[ext_resource type="PackedScene" uid="uid://bmw4qxy072o44" path="res://scenes/map_tiles.tscn" id="2_paxxb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_paxxb"]
+shader = ExtResource("1_4xfga")
+
+[sub_resource type="Sky" id="Sky_wppry"]
+sky_material = SubResource("ShaderMaterial_paxxb")
+
+[sub_resource type="Environment" id="Environment_gldc4"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_wppry")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_f12s3"]
+viewport_path = NodePath("world/map/SubViewport")
+
+[node name="map" type="Node3D" unique_id=489619991]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=810961795]
+environment = SubResource("Environment_gldc4")
+
+[node name="world" type="Node3D" parent="." unique_id=1378548333]
+
+[node name="map" type="Node3D" parent="world" unique_id=681432049]
+
+[node name="Sprite3D" type="Sprite3D" parent="world/map" unique_id=1911235848]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+texture = SubResource("ViewportTexture_f12s3")
+
+[node name="SubViewport" type="SubViewport" parent="world/map" unique_id=1252412114]
+size = Vector2i(2048, 2048)
+
+[node name="map_tiles" parent="world/map/SubViewport" unique_id=1787749466 instance=ExtResource("2_paxxb")]

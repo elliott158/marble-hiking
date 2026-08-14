@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bejv0bcphm16o"]
+
+[ext_resource type="Texture2D" uid="uid://cah1xnbetumhv" path="res://icon.svg" id="1_xh3aw"]
+[ext_resource type="Shader" uid="uid://b4wcmjnefdkay" path="res://shaders/dialog_ui.gdshader" id="1_yjvli"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4hxa"]
+shader = ExtResource("1_yjvli")
+
+[sub_resource type="Theme" id="Theme_yjvli"]
+default_font_size = 60
+
+[node name="dialog_ui" type="Control" unique_id=193898718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=590106290]
+self_modulate = Color(1, 1, 1, 0.6156863)
+material = SubResource("ShaderMaterial_c4hxa")
+layout_mode = 0
+offset_right = 516.0
+offset_bottom = 256.0
+texture = ExtResource("1_xh3aw")
+stretch_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect" unique_id=1311683052]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yjvli")
+text = "hello
+"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://wiv6g720xddo"]
+
+[ext_resource type="PackedScene" uid="uid://duqdkvotgtqs2" path="res://scenes/player.tscn" id="1_xqthw"]
+[ext_resource type="Shader" uid="uid://b7ka3ibfo8qw5" path="res://shaders/sky1.tres" id="2_0oikf"]
+[ext_resource type="PackedScene" uid="uid://ctjfh4vd4btlf" path="res://scenes/focus_camera.tscn" id="2_xbtxu"]
+[ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="4_0oikf"]
+[ext_resource type="Texture2D" uid="uid://c1ots7w6i0i1q" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="5_6fvbv"]
+[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="6_cmwce"]
+[ext_resource type="PackedScene" uid="uid://imjj8qa6d72t" path="res://scenes/text_popup.tscn" id="7_c4hxa"]
+[ext_resource type="Texture2D" uid="uid://c307hdmos4gtm" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="7_rghk4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c74op"]
+shader = ExtResource("2_0oikf")
+
+[sub_resource type="Sky" id="Sky_0oikf"]
+sky_material = SubResource("ShaderMaterial_c74op")
+
+[sub_resource type="Environment" id="Environment_f12s3"]
+background_mode = 2
+sky = SubResource("Sky_0oikf")
+
+[sub_resource type="Gradient" id="Gradient_pkfgw"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s8e5r"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tujkl"]
+noise = SubResource("FastNoiseLite_s8e5r")
+color_ramp = SubResource("Gradient_pkfgw")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_c4hxa"]
+_shader_parameters = {
+&"auto_base_texture": 1,
+&"auto_height_reduction": 0.0,
+&"auto_overlay_texture": 0,
+&"auto_slope": 1.0970000521075,
+&"bias_distance": null,
+&"blend_sharpness": null,
+&"depth_blur": null,
+&"enable_macro_variation": null,
+&"enable_projection": false,
+&"flat_terrain_normals": false,
+&"macro_variation1": null,
+&"macro_variation2": null,
+&"macro_variation_slope": null,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": null,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_tujkl"),
+&"projection_threshold": null
+}
+world_background = 0
+auto_shader = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oikf"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_6fvbv"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_0oikf")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_i7j80"]
+name = "ground037_alb_ht"
+albedo_texture = ExtResource("4_0oikf")
+normal_texture = ExtResource("5_6fvbv")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_gjgbo"]
+name = "rock023_alb_ht"
+id = 1
+albedo_texture = ExtResource("6_cmwce")
+normal_texture = ExtResource("7_rghk4")
+detiling_rotation = 1.0
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_cmwce"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6fvbv")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_i7j80"), SubResource("Terrain3DTextureAsset_gjgbo")])
+
+[node name="testplane" type="Node3D" unique_id=1748594607]
+
+[node name="player" parent="." unique_id=2125592273 node_paths=PackedStringArray("camera_parent") instance=ExtResource("1_xqthw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4433446, 0)
+camera_parent = NodePath("../focus_camera")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1436219102]
+environment = SubResource("Environment_f12s3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1556963320]
+transform = Transform3D(1, 0, 0, 0, 0.45322773, 0.8913948, 0, -0.8913948, 0.45322773, 0, 0, 0)
+
+[node name="world" type="Node3D" parent="." unique_id=254731663]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world" unique_id=1775380409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028076172, 0.048920155, 29.148682)
+use_collision = true
+size = Vector3(12.220215, 1, 69.1001)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="world" unique_id=664139440]
+transform = Transform3D(1, 0, 0, 0, 0.7363922, 0.67655504, 0, -0.67655504, 0.7363922, 3.0545654, 2.0000844, 50.69295)
+use_collision = true
+size = Vector3(6.1672363, 1, 5.686142)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="world" unique_id=1608882777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8517485, 0.048920155, 29.148682)
+use_collision = true
+size = Vector3(0.24584961, 1, 69.1001)
+
+[node name="text_popup" parent="world" unique_id=355786217 instance=ExtResource("7_c4hxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2614064, 2.6713414, 7.5294404)
+
+[node name="Terrain3D" type="Terrain3D" parent="world" unique_id=697370283]
+data_directory = "res://T3Ddd"
+material = SubResource("Terrain3DMaterial_c4hxa")
+assets = SubResource("Terrain3DAssets_cmwce")
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="focus_camera" parent="." unique_id=659976973 node_paths=PackedStringArray("focus") instance=ExtResource("2_xbtxu")]
+focus = NodePath("../player")
+fov = 60

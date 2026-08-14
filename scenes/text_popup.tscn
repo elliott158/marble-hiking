@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://imjj8qa6d72t"]
+
+[ext_resource type="PackedScene" uid="uid://bejv0bcphm16o" path="res://scenes/dialog_ui.tscn" id="1_afbjj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_f12s3"]
+viewport_path = NodePath("SubViewport")
+
+[node name="text_popup" type="Node3D" unique_id=355786217]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=807622232]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(512, 256)
+
+[node name="dialog_ui" parent="SubViewport" unique_id=193898718 instance=ExtResource("1_afbjj")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=376657241]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+cast_shadow = 0
+visibility_range_end = 15.0
+billboard = 1
+texture = SubResource("ViewportTexture_f12s3")

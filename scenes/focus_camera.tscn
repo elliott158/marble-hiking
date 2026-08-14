@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ctjfh4vd4btlf"]
+
+[ext_resource type="Script" uid="uid://rk6iavx66mcy" path="res://gd/focus_camera.gd" id="1_6l7fn"]
+
+[node name="focus_camera" type="Node3D" unique_id=769229110]
+script = ExtResource("1_6l7fn")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=603659741]
+spring_length = 4.0
+
+[node name="camera" type="Camera3D" parent="SpringArm3D" unique_id=659976973]
