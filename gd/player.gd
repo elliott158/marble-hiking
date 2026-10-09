@@ -1,7 +1,7 @@
 extends RigidBody3D
 
-var SPEED: float = 30
-var LINEAR_SPEED: float = 30
+var SPEED: float = 50
+var LINEAR_SPEED: float = 50
 
 var linear_force = Vector3()
 var torque = Vector3()
