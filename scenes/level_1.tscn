@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c10erhoaml5ax"]
+
+[ext_resource type="PackedScene" uid="uid://duqdkvotgtqs2" path="res://scenes/player.tscn" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://ctjfh4vd4btlf" path="res://scenes/focus_camera.tscn" id="2_bswci"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_24r06"]
+sky_top_color = Color(0.45675766, 0.43390962, 0.5178144, 1)
+sky_curve = 0.020804415
+
+[sub_resource type="Sky" id="Sky_wppry"]
+sky_material = SubResource("ProceduralSkyMaterial_24r06")
+
+[sub_resource type="Environment" id="Environment_f12s3"]
+background_mode = 2
+sky = SubResource("Sky_wppry")
+
+[node name="level_1" type="Node3D" unique_id=643472677]
+
+[node name="world" type="Node3D" parent="." unique_id=409532196]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world" unique_id=1086687453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84628296, -1.5355936, 0.6642456)
+use_collision = true
+size = Vector3(10.481384, 1, 12.173218)
+
+[node name="body" parent="." unique_id=2125592273 node_paths=PackedStringArray("camera_parent") instance=ExtResource("1_014kd")]
+camera_parent = NodePath("../focus_camera")
+
+[node name="focus_camera" parent="." unique_id=769229110 node_paths=PackedStringArray("focus") instance=ExtResource("2_bswci")]
+focus = NodePath("../body")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1789376738]
+environment = SubResource("Environment_f12s3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=572801409]
+transform = Transform3D(1, 0, 0, 0, -0.67943394, 0.7337369, 0, -0.7337369, -0.67943394, 0, 0, 0)

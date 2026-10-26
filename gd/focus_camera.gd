@@ -2,7 +2,7 @@ extends Node3D
 
 @export var focus: Node3D
 @export var mouse_sensitivity: float = 0.005
-@export var zoom: float = 10
+@export var zoom: float = 5
 @export var fov: int = 80
 
 @export_range(-90.0, 0.0, 0.1, "radians_as_degrees") var min_vertical_angle: float = -PI/3
