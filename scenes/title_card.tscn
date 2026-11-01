@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://bcgxnf714iba8"]
 
-[ext_resource type="Shader" uid="uid://vjlxt67md0b3" path="res://label.tres" id="1_2xt8a"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wppry"]
-shader = ExtResource("1_2xt8a")
+[ext_resource type="Script" uid="uid://b7s7mm3y3xedo" path="res://gd/fade.gd" id="1_2xt8a"]
 
 [sub_resource type="Theme" id="Theme_f12s3"]
 default_font_size = 80
@@ -15,17 +12,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+mouse_behavior_recursive = 1
 
 [node name="Label" type="Label" parent="." unique_id=501698563]
-material = SubResource("ShaderMaterial_wppry")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = SubResource("Theme_f12s3")
 text = "plains"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+script = ExtResource("1_2xt8a")

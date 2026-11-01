@@ -13,7 +13,6 @@ offsets = PackedFloat32Array(0.2, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6fvbv"]
-noise_type = 2
 frequency = 0.03
 cellular_jitter = 3.0
 cellular_return_type = 0
@@ -47,7 +46,7 @@ _shader_parameters = {
 &"mipmap_bias": 1.0,
 &"noise1_angle": 0.0,
 &"noise1_offset": Vector2(0.5, 0.5),
-&"noise1_scale": 0.0400000019,
+&"noise1_scale": 0.070000003325,
 &"noise2_scale": 0.076,
 &"noise_texture": SubResource("NoiseTexture2D_cmwce"),
 &"projection_threshold": 0.8
@@ -55,7 +54,7 @@ _shader_parameters = {
 world_background = 0
 auto_shader = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oikf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa8r4"]
 transparency = 4
 cull_mode = 2
 vertex_color_use_as_albedo = true
@@ -65,10 +64,10 @@ distance_fade_mode = 1
 distance_fade_min_distance = 128.0
 distance_fade_max_distance = 96.0
 
-[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_6fvbv"]
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_15mv3"]
 generated_type = 1
 height_offset = 0.5
-material_override = SubResource("StandardMaterial3D_0oikf")
+material_override = SubResource("StandardMaterial3D_pa8r4")
 last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
@@ -86,7 +85,7 @@ normal_texture = ExtResource("4_e3sih")
 detiling_rotation = 1.0
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_2os1m"]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6fvbv")])
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_15mv3")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_i7j80"), SubResource("Terrain3DTextureAsset_gjgbo")])
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_24r06"]
@@ -100,12 +99,12 @@ sky_material = SubResource("ProceduralSkyMaterial_24r06")
 background_mode = 2
 sky = SubResource("Sky_wppry")
 
-[node name="level_1" type="Node3D" unique_id=643472677]
+[node name="plains" type="Node3D" unique_id=643472677]
 
 [node name="world" type="Node3D" parent="." unique_id=409532196]
 
 [node name="Terrain3D" type="Terrain3D" parent="world" unique_id=360272860]
-data_directory = "res://T3Ddd"
+data_directory = "res://T3Ddd/plain_data"
 material = SubResource("Terrain3DMaterial_2y5yt")
 assets = SubResource("Terrain3DAssets_2os1m")
 top_level = true
