@@ -1,21 +1,13 @@
 [gd_scene format=3 uid="uid://duqdkvotgtqs2"]
 
 [ext_resource type="Script" uid="uid://cbtac43cnsd8a" path="res://gd/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://cah1xnbetumhv" path="res://icon.svg" id="2_g2els"]
+[ext_resource type="Material" uid="uid://ccwjfpi13qly2" path="res://marbles/default.tres" id="2_g2els"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f12s3"]
 bounce = 0.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f12s3"]
-transparency = 1
-albedo_color = Color(1.0381511, 0, 1.0381511, 0.5686275)
-albedo_texture = ExtResource("2_g2els")
-metallic = 0.55
-metallic_specular = 0.64
-roughness = 0.4
-
 [sub_resource type="SphereMesh" id="SphereMesh_f12s3"]
-material = SubResource("StandardMaterial3D_f12s3")
+material = ExtResource("2_g2els")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_f12s3"]
 

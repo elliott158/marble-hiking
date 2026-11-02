@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccwjfpi13qly2"]
+
+[ext_resource type="Texture2D" uid="uid://cah1xnbetumhv" path="res://icon.svg" id="1_02ski"]
+
+[resource]
+transparency = 1
+albedo_color = Color(1.0381511, 0, 1.0381511, 0.5686275)
+albedo_texture = ExtResource("1_02ski")
+metallic = 0.55
+metallic_specular = 0.64
+roughness = 0.4
+heightmap_scale = 16.0
+point_size = 128.0
+fov_override = 147.0
