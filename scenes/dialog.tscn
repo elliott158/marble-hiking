@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d1irsy1qslarp"]
+
+[ext_resource type="Texture2D" uid="uid://cah1xnbetumhv" path="res://icon.svg" id="1_pkx4w"]
+
+[node name="Dialog" type="Control" unique_id=589316860]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="." unique_id=178075280]
+anchors_preset = 0
+offset_left = 66.0
+offset_top = 520.0
+offset_right = 1123.0
+offset_bottom = 745.0
+
+[node name="text" type="Label" parent="Control" unique_id=1597726093]
+top_level = true
+layout_mode = 0
+offset_left = 67.0
+offset_top = 520.0
+offset_right = 1124.0
+offset_bottom = 745.0
+text = "hello testing
+aaaa"
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1080666376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pkx4w")
+stretch_mode = 1
