@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="3_15mv3"]
 [ext_resource type="Texture2D" uid="uid://c307hdmos4gtm" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="4_e3sih"]
 [ext_resource type="PackedScene" uid="uid://bcgxnf714iba8" path="res://scenes/title_card.tscn" id="7_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://2nvtrkbwucir" path="res://scenes/dialog_test.tscn" id="8_y706v"]
 
 [sub_resource type="Gradient" id="Gradient_0oikf"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -124,3 +125,6 @@ environment = SubResource("Environment_f12s3")
 transform = Transform3D(1, 0, 0, 0, -0.67943394, 0.7337369, 0, -0.7337369, -0.67943394, 0, 0, 0)
 
 [node name="title_card" parent="." unique_id=2048730237 instance=ExtResource("7_pa8r4")]
+
+[node name="dialog_test" parent="." unique_id=1677851658 instance=ExtResource("8_y706v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7393074, 9.138033)
