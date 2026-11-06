@@ -4,7 +4,7 @@
 
 [resource]
 transparency = 1
-albedo_color = Color(0.9170028, 0.4756412, 0.28883773, 0.83137256)
+albedo_color = Color(0.8353601, 0.2852, 0.92, 0.83137256)
 albedo_texture = ExtResource("1_02ski")
 metallic = 0.55
 metallic_specular = 0.64
