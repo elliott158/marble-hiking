@@ -5,7 +5,7 @@
 [sub_resource type="Theme" id="Theme_f12s3"]
 default_font_size = 80
 
-[node name="title_card" type="Control" unique_id=2048730237]
+[node name="title_card" type="Control" unique_id=2048730237 node_paths=PackedStringArray("label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 mouse_behavior_recursive = 1
+script = ExtResource("1_2xt8a")
+label = NodePath("Label")
 
 [node name="Label" type="Label" parent="." unique_id=501698563]
 layout_mode = 1
@@ -24,8 +26,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = SubResource("Theme_f12s3")
-text = "plains"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-script = ExtResource("1_2xt8a")

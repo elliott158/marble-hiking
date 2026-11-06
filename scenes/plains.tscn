@@ -125,6 +125,7 @@ environment = SubResource("Environment_f12s3")
 transform = Transform3D(1, 0, 0, 0, -0.67943394, 0.7337369, 0, -0.7337369, -0.67943394, 0, 0, 0)
 
 [node name="title_card" parent="." unique_id=2048730237 instance=ExtResource("7_pa8r4")]
+text = "plains"
 
 [node name="dialog_test" parent="." unique_id=1677851658 instance=ExtResource("8_y706v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7393074, 9.138033)
