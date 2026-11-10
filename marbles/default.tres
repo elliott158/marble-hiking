@@ -6,8 +6,7 @@
 transparency = 1
 albedo_color = Color(0.8353601, 0.2852, 0.92, 0.83137256)
 albedo_texture = ExtResource("1_02ski")
-metallic = 0.55
-metallic_specular = 0.64
+metallic_specular = 0.0
 roughness = 0.4
 heightmap_scale = 16.0
 point_size = 128.0
