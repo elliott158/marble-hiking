@@ -12,5 +12,5 @@ func _input(event) -> void:
 		get_tree().root.add_child.call_deferred(dialog.instantiate())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://duqdkvotgtqs2"]
 
 [ext_resource type="Script" uid="uid://cbtac43cnsd8a" path="res://gd/player.gd" id="1_3vyb7"]
-[ext_resource type="Material" uid="uid://ccwjfpi13qly2" path="res://marbles/default.tres" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://cah1xnbetumhv" path="res://icon.svg" id="3_qhqgy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f12s3"]
 bounce = 0.5
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlg0r"]
+albedo_texture = ExtResource("3_qhqgy")
+
 [sub_resource type="SphereMesh" id="SphereMesh_f12s3"]
-material = ExtResource("2_g2els")
+material = SubResource("StandardMaterial3D_qlg0r")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_f12s3"]
 
@@ -27,6 +30,14 @@ height = 0.2
 radial_segments = 12
 rings = 6
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24r06"]
+transparency = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_wppry"]
+material = SubResource("StandardMaterial3D_24r06")
+height = 0.5
+is_hemisphere = true
+
 [node name="body" type="RigidBody3D" unique_id=2125592273]
 mass = 8.0
 physics_material_override = SubResource("PhysicsMaterial_f12s3")
@@ -43,3 +54,6 @@ visible = false
 collision_base_size = 4.56
 process_material = SubResource("ParticleProcessMaterial_g2els")
 draw_pass_1 = SubResource("SphereMesh_y1qdi")
+
+[node name="face" type="MeshInstance3D" parent="." unique_id=1953971706]
+mesh = SubResource("SphereMesh_wppry")

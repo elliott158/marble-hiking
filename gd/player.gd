@@ -7,7 +7,17 @@ var linear_force = Vector3()
 var torque = Vector3()
 @export var camera_parent: Node3D
 
-func _physics_process(_delta):
+@onready var face: MeshInstance3D = $face
+
+func _ready() -> void:
+	if camera_parent == null:
+		push_error("camera_parent is null. please set.")
+
+func _process(_delta: float):
+	# runs every frame, cosmetics and such
+	face.global_rotation = camera_parent.get_child(0).global_rotation
+
+func _physics_process(_delta: float):
 	apply_force(Vector3())
 	
 	# rolling
