@@ -20,12 +20,13 @@ func _ready() -> void:
 	camera.fov = fov
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		arm.rotation.y -= event.relative.x * mouse_sensitivity
-		arm.rotation.y = wrapf(arm.rotation.y, 0.0, TAU)
+	if event is InputEventMouseMotion:
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			arm.rotation.y -= event.relative.x * mouse_sensitivity
+			arm.rotation.y = wrapf(arm.rotation.y, 0.0, TAU)
 		
-		arm.rotation.x -= event.relative.y * mouse_sensitivity
-		arm.rotation.x = clamp(arm.rotation.x, min_vertical_angle, max_vertical_angle)
+			arm.rotation.x -= event.relative.y * mouse_sensitivity
+			arm.rotation.x = clamp(arm.rotation.x, min_vertical_angle, max_vertical_angle)			
 	if event.is_action_pressed("mouse_lock_toggle"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

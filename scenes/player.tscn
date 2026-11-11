@@ -30,11 +30,10 @@ height = 0.2
 radial_segments = 12
 rings = 6
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24r06"]
-transparency = 1
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chrg4"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_wppry"]
-material = SubResource("StandardMaterial3D_24r06")
+[sub_resource type="SphereMesh" id="SphereMesh_al5yw"]
+material = SubResource("StandardMaterial3D_chrg4")
 height = 0.5
 is_hemisphere = true
 
@@ -56,4 +55,5 @@ process_material = SubResource("ParticleProcessMaterial_g2els")
 draw_pass_1 = SubResource("SphereMesh_y1qdi")
 
 [node name="face" type="MeshInstance3D" parent="." unique_id=1953971706]
-mesh = SubResource("SphereMesh_wppry")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_al5yw")

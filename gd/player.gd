@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _process(_delta: float):
 	# runs every frame, cosmetics and such
-	face.global_rotation = camera_parent.get_child(0).global_rotation
+	face.global_rotation = camera_parent.get_child(0).global_rotation + Vector3(90,0,0)
 
 func _physics_process(_delta: float):
 	apply_force(Vector3())
