@@ -100,7 +100,7 @@ sky_material = SubResource("ProceduralSkyMaterial_24r06")
 background_mode = 2
 sky = SubResource("Sky_wppry")
 
-[node name="plains" type="Node3D" unique_id=643472677]
+[node name="grassland" type="Node3D" unique_id=643472677]
 
 [node name="world" type="Node3D" parent="." unique_id=409532196]
 
@@ -125,7 +125,7 @@ environment = SubResource("Environment_f12s3")
 transform = Transform3D(1, 0, 0, 0, -0.67943394, 0.7337369, 0, -0.7337369, -0.67943394, 0, 0, 0)
 
 [node name="title_card" parent="." unique_id=2048730237 instance=ExtResource("7_pa8r4")]
-text = "plains"
+text = "grassland"
 
 [node name="dialog_test" parent="." unique_id=1677851658 instance=ExtResource("8_y706v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7393074, 9.138033)
